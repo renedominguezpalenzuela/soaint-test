@@ -5,7 +5,13 @@ import { LandingpageComponent } from './landingpage.component';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+import { Routes, RouterModule } from '@angular/router';
 
+
+
+const routes: Routes = [
+  { path: '', component: LandingpageComponent },
+]
 
 @NgModule({
   declarations: [
@@ -13,7 +19,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   ],
   imports: [
     CommonModule,
-    MatCheckboxModule
-  ]
+    MatCheckboxModule,
+    RouterModule.forChild(routes)
+
+  ],
+  exports: [RouterModule]
 })
 export class LandingpageModule { }
